@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<h1>大甩卖</h1>
+		<form action="#" method="get">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th> <input type="checkbox" name="" id="" value="" onclick="quanxuan(this)" />全选</th>
+					<th onclick="fan1()">反选</th>
+					<th onclick="qs()"> 全删</th>
+					<th onclick="sc()"> 删除</th>
+				</tr>
+				<tr>
+					<th> <input type="checkbox" name="xxxxx" id="" value="" /></th>
+					<th> 网再王网</th>
+					<th> 单价：
+						<font color="red">9.99元</font>
+					</th>
+					<th> <input type="button" id="" onclick="jia(this)" value="+" /></th>
+					<th> <input type="text" id="" size="2" value="1" /></th>
+					<th> <input type="button" id="" onclick="jian(this)" value="-" /></th>
+					<th>总价：xxx</th>
+					<th onclick="yichu(this)">移除</th>
+				</tr>
+				<tr>
+					<th> <input type="checkbox" name="xxxxx" id="" value="" /></th>
+					<th> 网再王网1</th>
+					<th> 单价：
+						<font color="red">9.99元</font>
+					</th>
+					<th> <input type="button" id="" onclick="jia(this)" value="+" /></th>
+					<th> <input type="text" id="" size="2" value="1" /></th>
+					<th> <input type="button" id="" onclick="jian(this)" value="-" /></th>
+					<th>总价：xxx</th>
+					<th onclick="yichu(this)">移除</th>
+				</tr>
+				<tr>
+					<th> <input type="checkbox" name="xxxxx" id="" value="" /></th>
+					<th> 网再王网2</th>
+					<th> 单价：
+						<font color="red">9.99元</font>
+					</th>
+					<th> <input type="button" id="" onclick="jia(this)" value="+" /></th>
+					<th> <input type="text" id="" size="2" value="1" /></th>
+					<th> <input type="button" id="" onclick="jian(this)" value="-" /></th>
+					<th>总价：xxx</th>
+					<th onclick="yichu(this)">移除</th>
+				</tr>
+				<tr>
+					<th> <input type="checkbox" name="xxxxx" id="" value="" /></th>
+					<th> 网再王网3</th>
+					<th> 单价：
+						<font color="red">9.99元</font>
+					</th>
+					<th> <input type="button" id="" onclick="jia(this)" value="+" /></th>
+					<th> <input type="text" id="" size="2" value="1" /></th>
+					<th> <input type="button" id="" onclick="jian(this)" value="-" /></th>
+					<th>总价：xxx</th>
+					<th onclick="yichu(this)">移除</th>
+				</tr>
+				<tr>
+					<th> <input type="checkbox" name="xxxxx" id="" value="" /></th>
+					<th> 网再王网4</th>
+					<th> 单价：
+						<font color="red">9.99元</font>
+					</th>
+					<th> <input type="button" id="" onclick="jia(this)" value="+" /></th>
+					<th> <input type="text" id="" size="2" value="1" /></th>
+					<th> <input type="button" id="" onclick="jian(this)" value="-" /></th>
+					<th>总价：xxx</th>
+					<th onclick="yichu(this)">移除</th>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			function sc() {
+				var quan = document.getElementsByName("xxxxx")
+				var a = quan.length
+				for(var i = a - 1; i >= 0; i--) {
+					if(quan[i].checked) {
+						quan[i].parentElement.parentElement.remove()
+					}
+				}
+			}
+
+			function qs() {
+				var quan = document.getElementsByName("xxxxx")
+				for(var i = 0; i < quan.length; i++) {
+					quan[i].parentElement.parentElement.parentElement.remove();
+				}
+			}
+
+			function fan1() {
+				var quan = document.getElementsByName("xxxxx")
+				for(var i = 0; i < quan.length; i++) {
+					if(quan[i].checked) {
+						quan[i].checked = false;
+					} else {
+						quan[i].checked = true;
+					}
+				}
+			}
+
+			function quanxuan(q) {
+				var quan = document.getElementsByName("xxxxx")
+				for(var i = 0; i < quan.length; i++) {
+					if(q.checked) {
+						quan[i].checked = true;
+					} else {
+						quan[i].checked = false;
+					}
+				}
+			}
+
+			function jia(bian) {
+				bian.parentElement.nextElementSibling.firstElementChild.value++;
+			}
+
+			function jian(bian) {
+				var jians = bian.parentElement.previousElementSibling.firstElementChild;
+				if(jians.value >= 1) {
+					jians.value--;
+				} else {
+					alert("不能再减了")
+				}
+			}
+
+			function yichu(bian) {
+				bian.parentElement.remove()
+			}
+		</script>
+	</body>
+
+</html>
